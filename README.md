@@ -5,13 +5,25 @@ This plugin ease the integration between Grails Hibernate 2nd Level cache and Re
 
 ## Installation
 
-To install just add the plugin into your BuildConfig.groovy
+To install you need add the plugin into your BuildConfig.groovy
 
 ```groovy
 compile ":redis-hibernate-cache:1.0"
 ```
 
-Then configure your DataSource.groovy to use this cache:
+And also this repository to the list of repositories:
+
+```groovy
+repositories {
+    ...
+
+    mavenRepo "http://dl.bintray.com/debop/maven"
+}
+
+```
+This is necessary in order to download some dependencies that aren't in the main maven repositories.
+
+After this you can configure your DataSource.groovy to use the cache:
 
 ```groovy
 hibernate {
